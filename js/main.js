@@ -1,21 +1,42 @@
 const main = ()=>{
-
-    document.getElementById('logo').onclick = function(event){
-        offsetHandler(1);
-    }
     const mainContainer = document.querySelector('.pokecont');
     //botones para paginación
     const prev = document.querySelector('#previous');
     const next = document.querySelector('#next');
-
+    document.getElementById('page-btns').style.display='flex';
     //botones para el cambio en generacion
     const gens = document.querySelectorAll('.gens');
+    //regresar al inicio con el logo
+    document.getElementById('logo').onclick = function(event){
+        document.getElementById('page-btns').style.display='flex';
+        offsetHandler(1);
+    }
     //arreglo para el cambio de generaciones
     const pokeregionOffset = [1,152,252,387,494,650,722,810];
         
     //valores base de paginacion
     let offset = 1;
     let limit = 8;
+    //busqueda directa
+    document.getElementById('search').onclick = function(event){
+        var busq = document.getElementById('searchbar').value;
+        if(busq==''){
+            alert("Introduzca una palabra clave");
+        }
+        else{
+            document.getElementById('searchbar').value='';
+            var valoresAceptados = /^[0-9]+/;
+            if(busq.match(valoresAceptados)){
+                rmChildNodes(mainContainer);
+                fetchPoke(busq);
+                document.getElementById('page-btns').style.display='none';
+            }
+            else{
+                alert("No es un valor númerico");
+            }
+        }
+    }
+    
     //eliminador de nodos
     const rmChildNodes = (parent)=>{
         while (parent.firstChild) {
@@ -30,6 +51,7 @@ const main = ()=>{
     }
     //Se añaden los eventlisteners a cada generacion
     gens.forEach((gen,i)=>gen.addEventListener('click',()=>{
+        document.getElementById('page-btns').style.display='flex';
         offsetHandler(pokeregionOffset[i]);
     }));
 
@@ -40,6 +62,7 @@ const main = ()=>{
     next.addEventListener('click',()=>{
         offsetHandler(offset+9);
     });
+
     const fetchPoke = (id)=>{
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
         .then(res=> res.json()).then(data=>createPokeCard(data));

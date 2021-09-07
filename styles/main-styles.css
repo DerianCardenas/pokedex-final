@@ -74,7 +74,7 @@ header a{
     background-color: #4a4a4a;
     color: white;
     transition: all 0.2s linear;
-}/*
+}
 .searchnav{
   margin: auto;
   padding: 1;
@@ -94,7 +94,7 @@ header a{
   border-radius: 10px;
   font-size: 17px;
   border-left: 10%;
-}*/
+}
 .logo-central{
     display: flex;
     margin: 0 auto;
@@ -414,6 +414,18 @@ header a{
     header{
         width: 100%;
     }
+    header .searchnav{
+      margin-bottom: 2%;
+    }
+    .searchnav input[type=text] {
+      margin-right: 5%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+    .searchnav input[type=button] {
+      margin-left: 5%;
+      margin-bottom: 2%;
+    }
     .pokecont{
         grid-template-columns: 1fr;
         gap: 30px;
@@ -434,11 +446,12 @@ header a{
     }
     .pagination{
         padding-top: 2rem;
+        margin-left: 2%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     .pagination li{
-        margin: 0 10%;
+        margin: 0 5%;
     }
 }

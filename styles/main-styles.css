@@ -9,7 +9,7 @@ body{
 header{
     background: #333;
     color: white;
-    width: 78%;
+    width: 108%;
     margin: 0 auto;
     display: flex;
     position: relative;
@@ -62,13 +62,13 @@ header a{
     list-style: none;
     text-decoration: none;
     background: #333;
-    padding: .55rem;
+    padding: 1rem;
     display: flex;
 }
 .navigation ul li a{
     color: white;
     display: flex;
-    padding: .3rem;
+    padding: .5rem;
 }
 .navigation ul li a:hover{
     background-color: #4a4a4a;

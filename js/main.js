@@ -24,7 +24,6 @@ const main = ()=>{
             alert("Introduzca una palabra clave");
         }
         else{
-            alert('No sirvo aún :( - Mi programador es un NyE');
             document.getElementById('searchbar').value='';
             var valoresAceptados = /^[0-9]+/;
             if(busq.match(valoresAceptados)){

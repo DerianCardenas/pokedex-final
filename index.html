@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/pokeball.png">
+    <link rel="stylesheet" href="./styles/main-styles.css">
+    <title>Pokedex</title>
+    
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="container">
+            <a href="#" class="logo" id="logo">
+                <img src="./assets/images/pokeball-logo.png"/>
+                <span>Pokédex</span>
+            </a>
+            <span class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            <nav class="navigation">
+                <ul >
+                    <li><a href="#" class="gens">Gen 1</a></li>
+                    <li><a href="#" class="gens">Gen 2</a></li>
+                    <li><a href="#" class="gens">Gen 3</a></li>
+                    <li><a href="#" class="gens">Gen 4</a></li>
+                    <li><a href="#" class="gens">Gen 5</a></li>
+                    <li><a href="#" class="gens">Gen 6</a></li>
+                    <li><a href="#" class="gens">Gen 7</a></li>
+                    <li><a href="#" class="gens">Gen 8</a></li>
+                </ul>
+                <!--<div class="searchnav">  
+                  <input type="text" id="searchbar" placeholder="ID o Nombre">
+                  <input type="button" id="search" value="Buscar">
+                </div>-->
+            </nav>
+        </div>
+    </header>
+    <img class="logo-central" src="https://www.pinclipart.com/picdir/big/527-5272683_logo-pokemon-clipart-clip-free-stock-pokemon-logo.png">
+    <main class="main">
+        <div class="pokecont">
+        </div>
+        <nav class="pagination">
+            <ul class="pagination">
+                <li id="previous" class="page-i"> <a class="page-linker" href="#">Previous</a></li>
+                <li id="next" class="page-i"> <a class="page-linker" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </main>
+    <script type="text/javascript" src="./js/header.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

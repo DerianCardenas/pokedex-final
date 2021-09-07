@@ -34,11 +34,12 @@
                     <li><a href="#" class="gens">Gen 6</a></li>
                     <li><a href="#" class="gens">Gen 7</a></li>
                     <li><a href="#" class="gens">Gen 8</a></li>
+                    <div class="searchnav">  
+                      <input type="text" id="searchbar" placeholder="ID o Nombre">
+                      <input type="button" id="search" value="Buscar">
+                    </div>
                 </ul>
-                <!--<div class="searchnav">  
-                  <input type="text" id="searchbar" placeholder="ID o Nombre">
-                  <input type="button" id="search" value="Buscar">
-                </div>-->
+                
             </nav>
         </div>
     </header>
@@ -47,7 +48,8 @@
         <div class="pokecont">
         </div>
         <nav class="pagination">
-            <ul class="pagination">
+
+            <ul class="pagination" id="page-btns">
                 <li id="previous" class="page-i"> <a class="page-linker" href="#">Previous</a></li>
                 <li id="next" class="page-i"> <a class="page-linker" href="#">Next</a></li>
             </ul>

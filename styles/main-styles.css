@@ -361,7 +361,7 @@ header a{
 }
 @media (max-width: 1020px){
     header {
-        width: 70%;
+        width: 100%;
         flex-direction: column;
         align-items: flex-start;
     }

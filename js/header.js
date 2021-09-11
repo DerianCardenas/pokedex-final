@@ -1,14 +1,10 @@
 
 const header = ()=>{
-    const  menuBtn = document.querySelector('.toggle-button'),
-    menu = document.querySelector('.navigation ul');
+    const  menuBtn = document.querySelector('.btn_menu'),
+    menu = document.querySelector('.menu_items');
 
     menuBtn.addEventListener('click',()=>{
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');    
-        }else{
-            menu.classList.add('show');
-        }
+        menu.classList.toggle('show');
     });
 }
 

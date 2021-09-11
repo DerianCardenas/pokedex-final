@@ -5,50 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="./assets/images/pokeball.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/main-styles.css">
     <title>Pokedex</title>
-    
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-        <div class="container">
-            <a href="#" class="logo" id="logo">
-                <img src="./assets/images/pokeball-logo.png"/>
-                <span>Pokédex</span>
-            </a>
-            <span class="menu-icon">
-                <i class="fas fa-bars"></i>
-            </span>
-            <nav class="navigation">
-                <ul >
-                    <li><a href="#" class="gens">Gen 1</a></li>
-                    <li><a href="#" class="gens">Gen 2</a></li>
-                    <li><a href="#" class="gens">Gen 3</a></li>
-                    <li><a href="#" class="gens">Gen 4</a></li>
-                    <li><a href="#" class="gens">Gen 5</a></li>
-                    <li><a href="#" class="gens">Gen 6</a></li>
-                    <li><a href="#" class="gens">Gen 7</a></li>
-                    <li><a href="#" class="gens">Gen 8</a></li>
-                    <div class="searchnav">  
-                      <input type="text" id="searchbar" placeholder="#Pokedex 001-882">
-                      <input type="button" id="search" value="Buscar">
-                    </div>
-                </ul>
-                
-            </nav>
+    <nav class="menu">
+        <div class="logo-cont" id="logo-cont">
+            <img src="./assets/images/pokeball-logo.png">
+            <label class="logo">Pokemon</label>
         </div>
-    </header>
+        <ul class="menu_items">
+            <li><a href="#" class="gens">Gen 1</a></li>
+            <li><a href="#" class="gens">Gen 2</a></li>
+            <li><a href="#" class="gens">Gen 3</a></li>
+            <li><a href="#" class="gens">Gen 4</a></li>
+            <li><a href="#" class="gens">Gen 5</a></li>
+            <li><a href="#" class="gens">Gen 6</a></li>
+            <li><a href="#" class="gens">Gen 7</a></li>
+            <li><a href="#" class="gens">Gen 8</a></li>
+            <div class="searchnav">  
+                <input type="text" id="searchbar" placeholder="ID o Nombre">
+                <input type="button" id="search" value="Buscar">
+            </div>
+        </ul>
+
+        <span class="btn_menu">
+            <i class="fa fa-bars"></i>
+        </span>
+    </nav>
     <img class="logo-central" src="https://www.pinclipart.com/picdir/big/527-5272683_logo-pokemon-clipart-clip-free-stock-pokemon-logo.png">
     <main class="main">
         <div class="pokecont">
         </div>
         <nav class="pagination">
-
             <ul class="pagination" id="page-btns">
                 <li id="previous" class="page-i"> <a class="page-linker" href="#">Previous</a></li>
                 <li id="next" class="page-i"> <a class="page-linker" href="#">Next</a></li>

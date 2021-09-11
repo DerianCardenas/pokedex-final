@@ -1,5 +1,26 @@
 const main = ()=>{
     const mainContainer = document.querySelector('.pokecont');
+    const pokeType={
+        'bug':['Bicho','img-div-bug',],
+        'fire':['Fuego','img-div-fire'],
+        'ice':['Hielo','img-div-ice'],
+        'grass':['Planta','img-div-grass'],
+        'electric':['Electrico','img-div-electric'],
+        'water':['Agua','img-div-water'],
+        'ground':['Tierra','img-div-ground'],
+        'rock':['Roca','img-div-rock'],
+        'fighting':['Lucha','img-div-fighting'],
+        'flying':['Volador','img-div-flying'],
+        'steel':['Acero','img-div-steel'],
+        'fairy':['Hada','img-div-fairy'],
+        'dragon':['Dragon','img-div-dragon'],
+        'dark':['Siniestro','img-div-dark'],
+        'ghost':['Fantasma','img-div-ghost'],
+        'psychic':['Psíquico','img-div-psychic'],
+        'normal':['Normal','img-div-normal'],
+        'poison':['Veneno','img-div-poison'],
+    }
+    console.log();
     //botones para paginación
     const prev = document.querySelector('#previous');
     const next = document.querySelector('#next');
@@ -13,28 +34,7 @@ const main = ()=>{
     }
     //arreglo para el cambio de generaciones
     const pokeregionOffset = [1,152,252,387,494,650,722,810];
-    //mapa para los tipos
-    const compTipos = (cadena) =>{
-        let nuevoTipo='';
-        if(cadena.match('bug')) return 'Bicho';
-        else if(cadena.match('fire')) return 'Fuego';
-        else if(cadena.match('ice')) return 'Hielo';
-        else if(cadena.match('grass')) return 'Planta';
-        else if(cadena.match('electric')) return 'Electrico';
-        else if(cadena.match('water')) return 'Agua';
-        else if(cadena.match('ground')) return 'Tierra';
-        else if(cadena.match('rock')) return 'Roca';
-        else if(cadena.match('fighting')) return 'Lucha';
-        else if(cadena.match('flying')) return 'Volador';
-        else if(cadena.match('steel')) return 'Acero';
-        else if(cadena.match('fairy')) return 'Hada';
-        else if(cadena.match('dragon')) return 'Dragon';
-        else if(cadena.match('dark')) return 'Siniestro';
-        else if(cadena.match('ghost')) return 'Fantasma';
-        else if(cadena.match('psychic')) return 'Psíquico';
-        else if(cadena.match('normal')) return 'Normal';
-        else if(cadena.match('poison')) return 'Veneno';
-    }
+    
     //valores base de paginacion
     let offset = 1;
     let limit = 8;
@@ -115,42 +115,8 @@ const main = ()=>{
 
         const imgColor = document.createElement('div');
         let type=pokemon.types[0].type.name;
-        if(type=="grass")
-            imgColor.classList.add('img-div-grass');
-        else if(type=='fire')
-            imgColor.classList.add('img-div-fire');
-        else if(type=='water')
-            imgColor.classList.add('img-div-water');
-        else if(type=='bug')
-            imgColor.classList.add('img-div-bug');
-        else if(type=='flying')
-            imgColor.classList.add('img-div-fly');
-        else if(type=='normal')
-            imgColor.classList.add('img-div-normal');
-        else if(type=='poison')
-            imgColor.classList.add('img-div-poison');
-        else if(type=='electric')
-            imgColor.classList.add('img-div-electric');
-        else if(type=='ground')
-            imgColor.classList.add('img-div-ground');
-        else if(type=='fighting')
-            imgColor.classList.add('img-div-fighting');
-        else if(type=='fairy')
-            imgColor.classList.add('img-div-fairy');
-        else if(type=='dark')
-            imgColor.classList.add('img-div-dark');
-        else if(type=='dragon')
-            imgColor.classList.add('img-div-dragon');
-        else if(type=='psychic')
-            imgColor.classList.add('img-div-psychic');
-        else if(type=='ice')
-            imgColor.classList.add('img-div-ice');
-        else if(type=='rock')
-            imgColor.classList.add('img-div-rock');
-        else if(type=='ghost')
-            imgColor.classList.add('img-div-ghost');
-        else if(type=='steel')
-            imgColor.classList.add('img-div-steel');
+        imgColor.classList.add(pokeType[type][1]);
+        
         const imgColorBack = imgColor.cloneNode(true);
         const imgColorSp = imgColor.cloneNode(true);
         //PARTE DELANTERA DE LA IMAGEN
@@ -219,11 +185,11 @@ const main = ()=>{
         back.appendChild(pokeDataBack);
 
         let pokeT = pokemon.types[0].type.name;
-        pokeT = compTipos(pokeT);
+        pokeT = pokeType[pokeT][0];
         let textoSp = `Tipo 1: ${pokeT}`;
         for(let i = 1; i < pokemon.types.length; i++){
             pokeT = pokemon.types[i].type.name;
-            pokeT = compTipos(pokeT);
+            pokeT = pokeType[pokeT][0];
             textoSp+=` - Tipo ${i+1}: ${pokeT}`;
         }
         
@@ -246,42 +212,7 @@ const main = ()=>{
         //Se crea el panel superior de la carta
         const imgColor = document.createElement('div');
         let type=pokemon.types[0].type.name;
-        if(type=="grass")
-            imgColor.classList.add('img-div-grass');
-        else if(type=='fire')
-            imgColor.classList.add('img-div-fire');
-        else if(type=='water')
-            imgColor.classList.add('img-div-water');
-        else if(type=='bug')
-            imgColor.classList.add('img-div-bug');
-        else if(type=='flying')
-            imgColor.classList.add('img-div-fly');
-        else if(type=='normal')
-            imgColor.classList.add('img-div-normal');
-        else if(type=='poison')
-            imgColor.classList.add('img-div-poison');
-        else if(type=='electric')
-            imgColor.classList.add('img-div-electric');
-        else if(type=='ground')
-            imgColor.classList.add('img-div-ground');
-        else if(type=='fighting')
-            imgColor.classList.add('img-div-fighting');
-        else if(type=='fairy')
-            imgColor.classList.add('img-div-fairy');
-        else if(type=='dark')
-            imgColor.classList.add('img-div-dark');
-        else if(type=='dragon')
-            imgColor.classList.add('img-div-dragon');
-        else if(type=='psychic')
-            imgColor.classList.add('img-div-psychic');
-        else if(type=='ice')
-            imgColor.classList.add('img-div-ice');
-        else if(type=='rock')
-            imgColor.classList.add('img-div-rock');
-        else if(type=='ghost')
-            imgColor.classList.add('img-div-ghost');
-        else if(type=='steel')
-            imgColor.classList.add('img-div-steel');
+        imgColor.classList.add(pokeType[type][1]);
         //Se crea el contenedor de la imagen
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('img-container');
@@ -307,7 +238,15 @@ const main = ()=>{
         btnInfo.type="button";
         btnInfo.title=pokemon.id;
         btnInfo.value="Ver más...";
-        btnInfo.className='btninfo';
+        btnInfo.classList.add('btninfo');
+        
+        btnInfo.addEventListener('click',()=>{
+            console.log(btnInfo.title);
+            document.getElementById('page-btns').style.display='none';
+            rmChildNodes(mainContainer);
+            let pkmn = btnInfo.title;
+            fetchUniPoke(pkmn);
+        })
 
         imgColor.appendChild(imgContainer);
         imgColor.appendChild(imgContainerBack);
@@ -320,16 +259,6 @@ const main = ()=>{
         mainContainer.appendChild(card);
     }
     fetchPokemons(offset,limit);
-    const btnsInfo = document.querySelectorAll('.btninfo');
-    //Se añaden los eventlisteners a cada boton
-    console.log(btnsInfo);
-    btnsInfo.forEach((btn,i)=>btn.addEventListener('click',()=>{
-        console.log(btn.title);
-        document.getElementById('page-btns').style.display='none';
-        rmChildNodes(mainContainer);
-        let pkmn = btnsInfo[i].title;
-        fetchUniPoke(title);
-    }));
 
 }
 
